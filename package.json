@@ -5,7 +5,7 @@
   "main": "dist/bin/www",
   "scripts": {
     "build": "npx tsc",
-    "start": "node dist/bin/www",
+    "start": "concurrently --kill-others \"npx tsc --watch\" \"node  dist/bin/www\"",
     "migration": "npx prisma migrate dev ",
     "dev": "concurrently --kill-others \"npx tsc --watch\" \"nodemon -q dist/bin/www\""
   },
